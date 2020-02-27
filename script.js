@@ -11,23 +11,20 @@
 // Hint: keeping track of the size in percentage might be easier.
 // Hint: Make sure you quote the emoji characters. They are strings, after all.
 // Hint: document.getElementById("balloon") will get the balloon element on the page.
-'use strict';
+"use strict";
 let balloon = document.getElementById("balloon");
 let currentSize = 100;
 
 window.addEventListener("keydown", event => {
-    if (event.key == "ArrowUp") {
-      event.preventDefault();
-        currentSize *= 1.1;
-      balloon.style.fontSize = currentSize + "%";
-    }
-});
-window.addEventListener("keydown", event => {
-    if (event.key == "ArrowDown") {
-      event.preventDefault();
-        currentSize *= .9;
-      balloon.style.fontSize = currentSize + "%";
-    }
+  if (event.key == "ArrowUp") {
+    event.preventDefault();
+    currentSize *= 1.1;
+    balloon.style.fontSize = currentSize + "%";
+  } else if (event.key == "ArrowDown") {
+    event.preventDefault();
+    currentSize *= 0.9;
+    balloon.style.fontSize = currentSize + "%";
+  }
 });
 
 // 2. The index.html page has a tabbed layout. Make the default state of the layout show
